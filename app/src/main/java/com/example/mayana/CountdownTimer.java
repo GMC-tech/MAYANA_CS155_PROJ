@@ -33,8 +33,12 @@ public class CountdownTimer extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
 
     private boolean mTimerRunning;
-    private long mStartTimeInMillis;
-    private long mTimeLeftInMillis = mStartTimeInMillis;
+
+    private long mStartWorkTimeInMillis;
+    private long mWorkTimeLeftInMillis = mStartWorkTimeInMillis;
+
+    private long mStartBreakTimeInMillis;
+    private long mBreakTimeLeftInMillis = mStartWorkTimeInMillis;
 
     private long break_millisInput;
     private long work_millisInput;
@@ -72,18 +76,13 @@ public class CountdownTimer extends AppCompatActivity {
                 }
 
                 work_millisInput = Long.parseLong(work_duration_input) * 60000;
+                validateDuration(work_millisInput);
 
-                if (work_millisInput == 0) {
-                    Toast.makeText(CountdownTimer.this, "Duration must be greater than '0'", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    Toast.makeText(CountdownTimer.this, "Work duration successfully set.", Toast.LENGTH_SHORT).show();
-                }
-
-                setTime(work_millisInput);
+                setWorkTime(work_millisInput);
                 inputWorkDuration.setText("");
                 inputBreakDuration.setText("");
             }
+
         });
 
         setBreakDuration.setOnClickListener(new View.OnClickListener() {
@@ -98,14 +97,9 @@ public class CountdownTimer extends AppCompatActivity {
                 }
 
                 break_millisInput = Long.parseLong(break_duration_input) * 60000;
+                validateDuration(break_millisInput);
 
-                if (break_millisInput == 0) {
-                    Toast.makeText(CountdownTimer.this, "Duration must be greater than '0'", Toast.LENGTH_SHORT).show();
-                    return;
-                }else {
-                    Toast.makeText(CountdownTimer.this, "Break Duration successfully set.", Toast.LENGTH_SHORT).show();
-                }
-                setTime(break_millisInput);
+                setBreakTime(break_millisInput);
                 inputWorkDuration.setText("");
                 inputBreakDuration.setText("");
             }
@@ -119,8 +113,34 @@ public class CountdownTimer extends AppCompatActivity {
                     pauseTimer();
                 }else{
                     workButton.setText("Pause Work");
-                    breakButton.setText("Start Break");
-                    startTimer();
+                    breakButton.setText("Resume Break");
+
+                    mCountDownTimer = new CountDownTimer(mWorkTimeLeftInMillis, 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            mWorkTimeLeftInMillis = millisUntilFinished;
+                            updateWorkCountDownText();
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            mTimerRunning = false;
+                            workButton.setText("Start Working");
+                            workButton.setVisibility(View.INVISIBLE);
+                            breakButton.setVisibility(View.VISIBLE);
+                            mButtonReset.setVisibility(View.VISIBLE);
+                        }
+                    }.start();
+
+                    mTimerRunning = true;
+                    workDurationLabel.setVisibility(View.INVISIBLE);
+                    breakDurationLabel.setVisibility(View.INVISIBLE);
+                    inputWorkDuration.setVisibility(View.INVISIBLE);
+                    inputBreakDuration.setVisibility(View.INVISIBLE);
+                    setWorkingDuration.setVisibility(View.INVISIBLE);
+                    setBreakDuration.setVisibility(View.INVISIBLE);
+                    breakButton.setVisibility(View.VISIBLE);
+                    mButtonReset.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -132,9 +152,36 @@ public class CountdownTimer extends AppCompatActivity {
                 if (mTimerRunning){
                     pauseTimer();
                 }else{
-                    workButton.setText("Start Work");
+                    //setBreakTime(break_millisInput);
+                    workButton.setText("Resume Work");
                     breakButton.setText("Pause Break");
-                    startTimer();
+
+                    mCountDownTimer = new CountDownTimer(mBreakTimeLeftInMillis, 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            mBreakTimeLeftInMillis = millisUntilFinished;
+                            updateBreakCountDownText();
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            mTimerRunning = false;
+                            workButton.setText("Start Working");
+                            workButton.setVisibility(View.INVISIBLE);
+                            breakButton.setVisibility(View.VISIBLE);
+                            mButtonReset.setVisibility(View.VISIBLE);
+                        }
+                    }.start();
+
+                    mTimerRunning = true;
+                    workDurationLabel.setVisibility(View.INVISIBLE);
+                    breakDurationLabel.setVisibility(View.INVISIBLE);
+                    inputWorkDuration.setVisibility(View.INVISIBLE);
+                    inputBreakDuration.setVisibility(View.INVISIBLE);
+                    setWorkingDuration.setVisibility(View.INVISIBLE);
+                    setBreakDuration.setVisibility(View.INVISIBLE);
+                    breakButton.setVisibility(View.VISIBLE);
+                    mButtonReset.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -147,19 +194,34 @@ public class CountdownTimer extends AppCompatActivity {
             }
         });
 
-        updateCountDownText();
+        updateWorkCountDownText();
+        updateBreakCountDownText();
     }
 
-    private void setTime(long milliseconds){
-        mStartTimeInMillis = milliseconds;
+    private void validateDuration (long inputDuration){
+        if (inputDuration == 0) {
+            Toast.makeText(CountdownTimer.this, "Duration must be greater than '0'", Toast.LENGTH_SHORT).show();
+            return;
+        }else {
+            Toast.makeText(CountdownTimer.this, "Duration successfully set.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void setWorkTime(long work_milliseconds){
+        mStartWorkTimeInMillis = work_milliseconds;
         resetTimer();
     }
 
-    private void startTimer(){
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+    private void setBreakTime(long break_milliseconds){
+        mStartBreakTimeInMillis = break_milliseconds;
+        resetTimer();
+    }
+
+   /* private void startTimer(){
+        mCountDownTimer = new CountDownTimer(mWorkTimeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
+                mWorkTimeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
             }
 
@@ -180,30 +242,56 @@ public class CountdownTimer extends AppCompatActivity {
         setBreakDuration.setVisibility(View.INVISIBLE);
         breakButton.setVisibility(View.VISIBLE);
         mButtonReset.setVisibility(View.VISIBLE);
-    }
+    }*/
+
     private void pauseTimer(){
         mCountDownTimer.cancel();
         mTimerRunning = false;
-        workButton.setText("Start Working");
+        workButton.setText("Resume Work");
         breakButton.setText("Start Break");
         breakButton.setVisibility(View.VISIBLE);
         mButtonReset.setVisibility(View.VISIBLE);
+        workDurationLabel.setVisibility(View.VISIBLE);
+        breakDurationLabel.setVisibility(View.VISIBLE);
         inputWorkDuration.setVisibility(View.VISIBLE);
         inputBreakDuration.setVisibility(View.VISIBLE);
         setWorkingDuration.setVisibility(View.VISIBLE);
         setBreakDuration.setVisibility(View.VISIBLE);
     }
+
     private void resetTimer(){
-        mTimeLeftInMillis = mStartTimeInMillis;
-        updateCountDownText();
+        mWorkTimeLeftInMillis = mStartWorkTimeInMillis;
+        mBreakTimeLeftInMillis=mStartBreakTimeInMillis;
+        updateWorkCountDownText();
+        updateBreakCountDownText();
         mButtonReset.setVisibility(View.INVISIBLE);
         breakButton.setVisibility(View.INVISIBLE);
         workButton.setVisibility(View.VISIBLE);
     }
-    private void updateCountDownText(){
-        int hours = (int) (mTimeLeftInMillis / 1000) / 3600;
-        int minutes = (int) ((mTimeLeftInMillis / 1000) % 3600) / 60;
-        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+    private void updateWorkCountDownText(){
+        int hours = (int) (mWorkTimeLeftInMillis / 1000) / 3600;
+        int minutes = (int) ((mWorkTimeLeftInMillis / 1000) % 3600) / 60;
+        int seconds = (int) (mWorkTimeLeftInMillis / 1000) % 60;
+
+
+        String timeLeftFormatted;
+        if (hours > 0){
+            timeLeftFormatted = String.format(Locale.getDefault(),
+                    "%d:%02d:%02d" ,hours,  minutes, seconds);
+        } else {
+            timeLeftFormatted = String.format(Locale.getDefault(),
+                    "%02d:%02d" , minutes, seconds);
+        }
+
+        mTextViewCountDown.setText(timeLeftFormatted);
+    }
+
+    private void updateBreakCountDownText(){
+        int hours = (int) (mBreakTimeLeftInMillis/ 1000) / 3600;
+        int minutes = (int) ((mBreakTimeLeftInMillis / 1000) % 3600) / 60;
+        int seconds = (int) (mBreakTimeLeftInMillis / 1000) % 60;
+
 
         String timeLeftFormatted;
         if (hours > 0){
