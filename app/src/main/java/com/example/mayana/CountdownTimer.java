@@ -19,6 +19,7 @@ public class CountdownTimer extends AppCompatActivity {
     private TextView mTextViewCountDown;
     private Button mButtonSet;
     private Button mButtonStartPause;
+    private Button mButtonStartPauseBreak;
     private Button mButtonReset;
 
     private CountDownTimer mCountDownTimer;
@@ -37,6 +38,7 @@ public class CountdownTimer extends AppCompatActivity {
 
         mButtonSet = findViewById(R.id.button_set);
         mButtonStartPause = findViewById(R.id.button_start_pause);
+        mButtonStartPauseBreak = findViewById(R.id.button_start_pause_break);
         mButtonReset = findViewById(R.id.button_reset);
 
         mButtonSet.setOnClickListener(new View.OnClickListener() {
@@ -96,8 +98,9 @@ public class CountdownTimer extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
-                mButtonStartPause.setText("Start");
+                mButtonStartPause.setText("Start Working");
                 mButtonStartPause.setVisibility(View.INVISIBLE);
+                mButtonStartPauseBreak.setVisibility(View.VISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
             }
         }.start();
@@ -105,13 +108,15 @@ public class CountdownTimer extends AppCompatActivity {
         mTimerRunning = true;
         mEditTextInput.setVisibility(View.INVISIBLE);
         mButtonSet.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setText("pause");
+        mButtonStartPause.setText("Pause Work");
+        mButtonStartPauseBreak.setVisibility(View.INVISIBLE);
         mButtonReset.setVisibility(View.INVISIBLE);
     }
     private void pauseTimer(){
         mCountDownTimer.cancel();
         mTimerRunning = false;
-        mButtonStartPause.setText("Start");
+        mButtonStartPause.setText("Start Working");
+        mButtonStartPauseBreak.setVisibility(View.VISIBLE);
         mButtonReset.setVisibility(View.VISIBLE);
         mEditTextInput.setVisibility(View.VISIBLE);
         mButtonSet.setVisibility(View.VISIBLE);
@@ -120,6 +125,7 @@ public class CountdownTimer extends AppCompatActivity {
         mTimeLeftInMillis = mStartTimeInMillis;
         updateCountDownText();
         mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonStartPauseBreak.setVisibility(View.INVISIBLE);
         mButtonStartPause.setVisibility(View.VISIBLE);
     }
     private void updateCountDownText(){
