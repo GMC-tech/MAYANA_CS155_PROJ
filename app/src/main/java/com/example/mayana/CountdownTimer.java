@@ -105,7 +105,7 @@ public class CountdownTimer extends AppCompatActivity {
                 }else {
                     Toast.makeText(CountdownTimer.this, "Break Duration successfully set.", Toast.LENGTH_SHORT).show();
                 }
-
+                setTime(break_millisInput);
                 inputWorkDuration.setText("");
                 inputBreakDuration.setText("");
             }
@@ -118,6 +118,8 @@ public class CountdownTimer extends AppCompatActivity {
                 if (mTimerRunning){
                     pauseTimer();
                 }else{
+                    workButton.setText("Pause Work");
+                    breakButton.setText("Start Break");
                     startTimer();
                 }
             }
@@ -130,7 +132,8 @@ public class CountdownTimer extends AppCompatActivity {
                 if (mTimerRunning){
                     pauseTimer();
                 }else{
-                    setTime(break_millisInput);
+                    workButton.setText("Start Work");
+                    breakButton.setText("Pause Break");
                     startTimer();
                 }
             }
@@ -175,7 +178,6 @@ public class CountdownTimer extends AppCompatActivity {
         inputBreakDuration.setVisibility(View.INVISIBLE);
         setWorkingDuration.setVisibility(View.INVISIBLE);
         setBreakDuration.setVisibility(View.INVISIBLE);
-        workButton.setText("Pause Work");
         breakButton.setVisibility(View.VISIBLE);
         mButtonReset.setVisibility(View.VISIBLE);
     }
@@ -183,6 +185,7 @@ public class CountdownTimer extends AppCompatActivity {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         workButton.setText("Start Working");
+        breakButton.setText("Start Break");
         breakButton.setVisibility(View.VISIBLE);
         mButtonReset.setVisibility(View.VISIBLE);
         inputWorkDuration.setVisibility(View.VISIBLE);
