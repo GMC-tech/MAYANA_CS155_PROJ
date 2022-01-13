@@ -44,13 +44,13 @@ public class CountdownTimer extends AppCompatActivity {
             public void onClick(View view) {
                 String input = mEditTextInput.getText().toString();
                 if (input.length() == 0){
-                    Toast.makeText(CountdownTimer.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CountdownTimer.this, "Please enter desired duration in the minutes field", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 long millisInput = Long.parseLong(input) * 60000;
                 if (millisInput == 0) {
-                    Toast.makeText(CountdownTimer.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CountdownTimer.this, "Duration must be greater than '0'", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
