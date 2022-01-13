@@ -7,6 +7,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class CountdownTimer extends AppCompatActivity {
 
     private TextView workDurationLabel;
     private TextView breakDurationLabel;
+    private ProgressBar progressBar;
 
     private Button setWorkingDuration;
     private Button setBreakDuration;
@@ -55,6 +57,7 @@ public class CountdownTimer extends AppCompatActivity {
 
         workDurationLabel = findViewById(R.id.textView_work_label);
         breakDurationLabel = findViewById(R.id.textView_break_label);
+        progressBar = findViewById(R.id.progressBar2);
 
         setWorkingDuration = findViewById(R.id.button_set);
         setBreakDuration = findViewById(R.id.button_set_break);
@@ -63,6 +66,8 @@ public class CountdownTimer extends AppCompatActivity {
         breakButton = findViewById(R.id.button_start_pause_break);
 
         mButtonReset = findViewById(R.id.button_reset);
+
+        progressBar.setVisibility(View.INVISIBLE);
 
         setWorkingDuration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +140,7 @@ public class CountdownTimer extends AppCompatActivity {
                     mTimerRunning = true;
                     workDurationLabel.setVisibility(View.INVISIBLE);
                     breakDurationLabel.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     inputWorkDuration.setVisibility(View.INVISIBLE);
                     inputBreakDuration.setVisibility(View.INVISIBLE);
                     setWorkingDuration.setVisibility(View.INVISIBLE);
@@ -176,6 +182,7 @@ public class CountdownTimer extends AppCompatActivity {
                     mTimerRunning = true;
                     workDurationLabel.setVisibility(View.INVISIBLE);
                     breakDurationLabel.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     inputWorkDuration.setVisibility(View.INVISIBLE);
                     inputBreakDuration.setVisibility(View.INVISIBLE);
                     setWorkingDuration.setVisibility(View.INVISIBLE);
@@ -253,6 +260,7 @@ public class CountdownTimer extends AppCompatActivity {
         mButtonReset.setVisibility(View.VISIBLE);
         workDurationLabel.setVisibility(View.VISIBLE);
         breakDurationLabel.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
         inputWorkDuration.setVisibility(View.VISIBLE);
         inputBreakDuration.setVisibility(View.VISIBLE);
         setWorkingDuration.setVisibility(View.VISIBLE);
