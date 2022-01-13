@@ -10,9 +10,11 @@
         android:id="@+id/edit_text_input"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="455dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="303dp"
         android:layout_toEndOf="@+id/textView_work_label"
         android:hint="@string/input_time_hint_label"
         android:inputType="number"
@@ -26,8 +28,8 @@
         android:layout_above="@+id/textView_work_label"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="256dp"
-        android:layout_marginBottom="134dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginBottom="105dp"
         android:text="@string/countdown_display"
         android:textColor="@android:color/black"
         android:textSize="60sp" />
@@ -38,10 +40,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView_break_label"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="108dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/work_countdown_label"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView_break_label"
@@ -49,31 +52,34 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_start_pause"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="108dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginBottom="29dp"
         android:text="@string/break_countdown_label"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_start_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_width="257dp"
+        android:layout_height="65dp"
+        android:layout_above="@+id/button_reset"
+        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="104dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginBottom="11dp"
         android:text="@string/timer_button_label" />
 
     <Button
         android:id="@+id/button_reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="81dp"
         android:text="@string/reset_button_label"
         android:visibility="invisible"
         tools:visibility="visible" />
@@ -84,8 +90,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="231dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="300dp"
         android:text="@string/set_button_label"
         android:textSize="12sp" />
 
