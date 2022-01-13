@@ -9,4 +9,13 @@
 
     <string name="hello_first_fragment">HELLO TEST 123</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- String used for CountdownTimer activity -->
+    <string name="countdown_display">00:00</string>
+    <string name="work_countdown_label">Work Duration</string>
+    <string name="break_countdown_label">Break Duration</string>
+    <string name="timer_button_label">Start Time</string>
+    <string name="set_button_label">Set</string>
+    <string name="reset_button_label">Reset</string>
+    <string name="input_time_hint_label">Minutes</string>
 </resources>
