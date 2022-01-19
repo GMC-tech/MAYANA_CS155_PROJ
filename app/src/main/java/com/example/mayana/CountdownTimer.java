@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -119,7 +120,6 @@ public class CountdownTimer extends AppCompatActivity {
                 }else{
                     workButton.setText("Pause Work");
                     breakButton.setText("Resume Break");
-
                     mCountDownTimer = new CountDownTimer(mWorkTimeLeftInMillis, 1000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
@@ -146,7 +146,7 @@ public class CountdownTimer extends AppCompatActivity {
                     setWorkingDuration.setVisibility(View.INVISIBLE);
                     setBreakDuration.setVisibility(View.INVISIBLE);
                     breakButton.setVisibility(View.VISIBLE);
-                    mButtonReset.setVisibility(View.VISIBLE);
+                    mButtonReset.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -188,7 +188,7 @@ public class CountdownTimer extends AppCompatActivity {
                     setWorkingDuration.setVisibility(View.INVISIBLE);
                     setBreakDuration.setVisibility(View.INVISIBLE);
                     breakButton.setVisibility(View.VISIBLE);
-                    mButtonReset.setVisibility(View.VISIBLE);
+                    mButtonReset.setVisibility(View.INVISIBLE);
                 }
             }
         });
