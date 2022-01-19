@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAYANA">
         <activity
+            android:name=".TrackHabits"
+            android:exported="true" />
+        <activity
             android:name=".CreateHabit"
             android:exported="true" />
         <activity
