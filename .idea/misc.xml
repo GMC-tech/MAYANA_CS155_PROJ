@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_sign_in.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable/ic_run_habit.xml" value="0.2765" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable/ic_running_activity.xml" value="0.2765" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_countdown_timer.xml" value="0.33" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_create_habit.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_intro.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_main.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_sign_in.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_sign_up.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_timer.xml" value="0.33" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_track_habits.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/countdown_timer.xml" value="0.25" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_first.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_habit_list.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_second.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_update_habit_item.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/habit_item.xml" value="0.33" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/intro_item_page.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/recycler_habit_item.xml" value="0.38697916666666665" />
       </map>
     </option>
   </component>

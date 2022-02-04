@@ -13,17 +13,19 @@ public class TrackHabits extends AppCompatActivity {
 
     private RecyclerView HabitRecyclerView;
     private RecyclerView.Adapter HabitAdapter;
-    //private RecyclerView.LayoutManager HabitLayoutManager;
+    private RecyclerView.LayoutManager HabitLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_habits);
 
+        //sample items since there is no database yet
         ArrayList<HabitItem> habitList = new ArrayList<>();
         habitList.add(new HabitItem(R.drawable.ic_run_habit, "Running", "40%"));
         habitList.add(new HabitItem(R.drawable.ic_run_habit, "Running", "60%"));
-
+        habitList.add(new HabitItem(R.drawable.ic_run_habit, "Running", "60%"));
+        habitList.add(new HabitItem(R.drawable.ic_run_habit, "Running", "60%"));
         HabitRecyclerView = findViewById(R.id.recyclerView);
         HabitRecyclerView.setHasFixedSize(true);
         //HabitLayoutManager = new LinearLayoutManager(this);
