@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+=======
+plugins {
+    id 'com.android.application'
+}
+>>>>>>> parent of ccb6873 (SignIn/SignUp)
 
 android {
     compileSdkVersion 30
@@ -84,4 +90,15 @@ dependencies {
     //Circle Indicator (ViewPager2)
     implementation 'me.relex:circleindicator:2.1.4'
 
+<<<<<<< HEAD
+=======
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+>>>>>>> parent of ccb6873 (SignIn/SignUp)
 }
