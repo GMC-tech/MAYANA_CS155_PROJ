@@ -13,7 +13,7 @@ import com.example.mayana.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    /*private FragmentFirstBinding binding;
 
     @Override
     public View onCreateView(
@@ -42,6 +42,6 @@ public class FirstFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
+    }*/
 
 }
