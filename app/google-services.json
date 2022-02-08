@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "904221327586",
+    "firebase_url": "https://mayana-ffbb3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mayana-ffbb3",
+    "storage_bucket": "mayana-ffbb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904221327586:android:0c71df4854e6a139ca5ebb",
+        "android_client_info": {
+          "package_name": "com.example.mayana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904221327586-2nma7ca8p5o0s7q3cah1ukndspdep81r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4HVuE6JM5VHgsJcg6v0Iactd9d-bEa88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904221327586-2nma7ca8p5o0s7q3cah1ukndspdep81r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
