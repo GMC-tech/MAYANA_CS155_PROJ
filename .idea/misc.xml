@@ -3,20 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable/ic_run_habit.xml" value="0.2765" />
-=======
->>>>>>> parent of ccb6873 (SignIn/SignUp)
-=======
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/drawable-v24/ic_vision.xml" value="0.3828125" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_countdown_timer.xml" value="0.2767210144927536" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_create_habit.xml" value="0.17831813576494426" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_post.xml" value="0.1" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_post_fragment.xml" value="0.22" />
         <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_sign_in.xml" value="0.17806484295845998" />
->>>>>>> parent of ab7becd (habit tracker files added)
-=======
->>>>>>> parent of ccb6873 (SignIn/SignUp)
-=======
->>>>>>> parent of ccb6873 (SignIn/SignUp)
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_track_habits.xml" value="0.17831813576494426" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/content_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_create_.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_home_.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_notes_.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_tasks_.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_vision_b_.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/habit_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/MAYANA_CS155_PROJ/app/src/main/res/layout/post_item.xml" value="0.33" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_countdown_timer.xml" value="0.33" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_create_habit.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_main.xml" value="0.2463768115942029" />

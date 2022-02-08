@@ -29,5 +29,5 @@
         android:id="@+id/visionB_Fragment"
         android:name="com.example.mayana.VisionB_Fragment"
         android:label="Vision"
-        tools:layout="@layout/fragment_vision_b_" />
+        tools:layout="@layout/activity_post_fragment" />
 </navigation>
