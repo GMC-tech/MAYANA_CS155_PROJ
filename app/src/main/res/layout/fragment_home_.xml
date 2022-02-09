@@ -19,17 +19,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="93dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="300dp"
-        android:src="@drawable/avatar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -44,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/noteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -69,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/timerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
@@ -87,7 +76,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="164dp"
         android:backgroundTint="#00FFFFFF"
-        android:src="@drawable/ic_calend"
+        android:src="@drawable/ic_calendar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,6 +88,16 @@
         android:layout_marginTop="572dp"
         android:src="@drawable/shape_bottomright"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="135dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/mayana_logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

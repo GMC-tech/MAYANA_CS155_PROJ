@@ -154,6 +154,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="23dp"
         android:background="#00000000"
-        android:foregroundTint="#FDF6F6" />
+        android:backgroundTint="#FA4646"
+        android:foregroundTint="#F44336"
+        android:progressTint="#F44336"
+        android:secondaryProgressTint="#E64646" />
 
 </RelativeLayout>
