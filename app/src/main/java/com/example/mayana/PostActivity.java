@@ -62,7 +62,7 @@ public class PostActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PostActivity.this, PostFragment.class));
+                startActivity(new Intent(PostActivity.this, VisionB_Fragment.class));
                 finish();
             }
         });
@@ -93,8 +93,8 @@ public class PostActivity extends AppCompatActivity {
             imageUri = result.getUri();
             image_added.setImageURI(imageUri);
         }else {
-            Toast.makeText(PostActivity.this, "Something gone wrong", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(PostActivity.this, PostFragment.class));
+
+            startActivity(new Intent(PostActivity.this, VisionB_Fragment.class));
             finish();
         }
     }
@@ -133,7 +133,7 @@ public class PostActivity extends AppCompatActivity {
 
                         Toast.makeText(PostActivity.this, "Post added.", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(PostActivity.this, PostFragment.class));
+                        startActivity(new Intent(PostActivity.this, VisionB_Fragment.class));
                         finish();
                     } else {
                         Toast.makeText(PostActivity.this, "Failed", Toast.LENGTH_SHORT).show();

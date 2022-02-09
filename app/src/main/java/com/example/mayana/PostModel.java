@@ -47,3 +47,4 @@ public class PostModel {
         this.publisher = publisher;
     }
 }
+

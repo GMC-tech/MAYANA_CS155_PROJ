@@ -54,7 +54,7 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback{
         }
     }
 
-  @Override
+    @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                 .addSwipeRightActionIcon(R.drawable.ic_deletetask)
