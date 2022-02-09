@@ -1,18 +1,57 @@
 package com.example.mayana;
 
+import static android.content.ContentValues.TAG;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Tasks_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Tasks_Fragment extends Fragment {
+import com.example.mayana.Adapter.TaskAdapter;
+import com.example.mayana.Model.TaskModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Tasks_Fragment extends Fragment implements Task_OnDialog {
+
+    private RecyclerView recyclerView;
+    private FloatingActionButton mFab;
+    private FirebaseFirestore firestore;
+    private TaskAdapter adapter;
+    private List<TaskModel> mList;
+    private Query query;
+    private ListenerRegistration listenerRegistration;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,37 +66,80 @@ public class Tasks_Fragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tasks_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Tasks_Fragment newInstance(String param1, String param2) {
-        Tasks_Fragment fragment = new Tasks_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = getView().findViewById(R.id.recycler);
+        mFab = getView().findViewById(R.id.task_addbutton);
+        firestore = FirebaseFirestore.getInstance();
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Task_AddNew.newInstance().show(getParentFragmentManager(), Task_AddNew.TAG);
+            }
+        });
+
+        mList = new ArrayList<>();
+        adapter = new TaskAdapter(Tasks_Fragment.this, mList);
+
+       ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new TouchHelper(adapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+        showData();
+        recyclerView.setAdapter(adapter);
+    }
+
+   private void showData(){
+        query = firestore.collection("task").orderBy("time" , Query.Direction.DESCENDING);
+
+        listenerRegistration = query.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot value, FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.d(TAG,"Error:"+e.getMessage());
+                }
+                else {
+                for (DocumentChange documentChange : value.getDocumentChanges()){
+                    if (documentChange.getType() == DocumentChange.Type.ADDED){
+                        String id = documentChange.getDocument().getId();
+                        TaskModel taskModel = documentChange.getDocument().toObject(TaskModel.class).withId(id);
+                        mList.add(taskModel);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+                listenerRegistration.remove();
+
+            }
         }
+        });
+   }
+
+
+    @Override
+    public void onDialogClose(DialogInterface dialogInterface) {
+        mList.clear();
+        showData();
+        adapter.notifyDataSetChanged();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_tasks_, container, false);
+
     }
+
 }
