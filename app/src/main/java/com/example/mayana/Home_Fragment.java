@@ -7,14 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Home_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Home_Fragment extends Fragment {
+public class Home_Fragment extends Fragment implements View.OnClickListener {
 
     ImageButton timerButton;
 
@@ -56,30 +59,41 @@ public class Home_Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home_, container, false);
+    }
 
-        View view = inflater.inflate(R.layout.fragment_home_, container, false);
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        requireView().findViewById(R.id.notes).setOnClickListener(this);
+        requireView().findViewById(R.id.calendar).setOnClickListener(this);
+        requireView().findViewById(R.id.timerButton).setOnClickListener(this);
 
-        timerButton = (ImageButton) view.findViewById(R.id.timerButton);
-        {
+    }
 
-            timerButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intentLoadNewActivity = new Intent(getActivity(), CountdownTimer.class);
-                    startActivity(intentLoadNewActivity);
-                }
-            });
+    public void onClick(View view) {
+        Intent i = null;
+
+        switch (view.getId()) {
+            case R.id.notes:
+                i = new Intent(view.getContext(), FragmentNotes.class);
+                startActivity(i);
+                break;
+            /*case R.id.calendar:
+                i = new Intent(view.getContext(), CalendarActivity.class);
+                startActivity(i);
+                break; */
+            case R.id.timerButton:
+                i = new Intent(view.getContext(), CountdownTimer.class);
+                startActivity(i);
+                break;
+                        default:
+                break;
         }
-        return view;
     }
 }
