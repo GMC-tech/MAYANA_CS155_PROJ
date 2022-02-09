@@ -16,16 +16,6 @@
         android:label="Tasks"
         tools:layout="@layout/fragment_tasks_" />
     <fragment
-        android:id="@+id/notes_Fragment"
-        android:name="com.example.mayana.Notes_Fragment"
-        android:label="Notes"
-        tools:layout="@layout/fragment_notes_" />
-    <fragment
-        android:id="@+id/create_Fragment"
-        android:name="com.example.mayana.Create_Fragment"
-        android:label="Create"
-        tools:layout="@layout/fragment_create_" />
-    <fragment
         android:id="@+id/visionB_Fragment"
         android:name="com.example.mayana.VisionB_Fragment"
         android:label="Vision"

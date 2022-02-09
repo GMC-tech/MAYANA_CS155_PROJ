@@ -30,10 +30,16 @@
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_first.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_second.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Mark Cortez/StudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/habit_item.xml" value="0.33" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable-v24/ic_note.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable/ic_deletetask.xml" value="0.2703125" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/drawable/ic_edittask.xml" value="0.2703125" />
         <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/activity_create_habit.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_create_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_home_.xml" value="0.1" />
         <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/fragment_tasks_.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/task_addnew.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/layout/task_inputlayout.xml" value="0.2" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/MAYANA_CS155_PROJ/app/src/main/res/menu/bottom_menu.xml" value="0.12239583333333333" />
       </map>
     </option>
   </component>
