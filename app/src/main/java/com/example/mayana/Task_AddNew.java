@@ -96,7 +96,7 @@ public class Task_AddNew extends BottomSheetDialogFragment {
                     mSaveBtn.setBackgroundColor(Color.GRAY);
                 } else {
                     mSaveBtn.setEnabled(true);
-                    mSaveBtn.setBackgroundColor(getResources().getColor(R.color.peach_1));
+                    mSaveBtn.setBackgroundColor(getResources().getColor(R.color.green));
                 }
             }
 

@@ -60,7 +60,7 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback{
                 .addSwipeRightActionIcon(R.drawable.ic_deletetask)
                 .addSwipeRightBackgroundColor(Color.RED)
                 .addSwipeLeftActionIcon(R.drawable.ic_edittask)
-                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext() , R.color.peach_1))
+                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext() , R.color.green))
                 .create()
                 .decorate();
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
