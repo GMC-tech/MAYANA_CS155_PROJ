@@ -4,7 +4,8 @@
     package="com.example.mayana">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -19,6 +20,11 @@
             android:name=".FragmentCalendar"
             android:exported="false"
             android:label="@string/title_activity_fragment_calendar"
+            android:theme="@style/Theme.MAYANA.NoActionBar" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
             android:theme="@style/Theme.MAYANA.NoActionBar" />
         <activity
             android:name=".FragmentNotes"
