@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mayana">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -13,6 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MAYANA">
+        <activity
+            android:name=".FragmentCalendar"
+            android:exported="false"
+            android:label="@string/title_activity_fragment_calendar"
+            android:theme="@style/Theme.MAYANA.NoActionBar" />
         <activity
             android:name=".FragmentNotes"
             android:exported="false"
@@ -53,6 +60,23 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".note.EditNote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".note.AddNote"
+            android:label="@string/title_activity_add_note"
+            android:parentActivityName=".FragmentNotes"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mayana.FragmentNotes" />
+        </activity>
+        <activity
+            android:name=".note.NoteDetails"
+            android:label="@string/title_activity_note_details"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

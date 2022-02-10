@@ -84,10 +84,10 @@ public class Home_Fragment extends Fragment implements View.OnClickListener {
                 i = new Intent(view.getContext(), FragmentNotes.class);
                 startActivity(i);
                 break;
-            /*case R.id.calendar:
-                i = new Intent(view.getContext(), CalendarActivity.class);
+            case R.id.calendar:
+                i = new Intent(view.getContext(), FragmentCalendar.class);
                 startActivity(i);
-                break; */
+                break;
             case R.id.timerButton:
                 i = new Intent(view.getContext(), CountdownTimer.class);
                 startActivity(i);

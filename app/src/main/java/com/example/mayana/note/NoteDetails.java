@@ -1,25 +1,25 @@
 package com.example.mayana.note;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
+
+import com.example.mayana.note.EditNote;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.example.mayana.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NoteDetails extends AppCompatActivity {
     Intent data;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,16 +41,13 @@ public class NoteDetails extends AppCompatActivity {
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        fab.setOnClickListener(view -> {
 
-                Intent i = new Intent(view.getContext(),EditNote.class);
-                i.putExtra("title",data.getStringExtra("title"));
-                i.putExtra("content",data.getStringExtra("content"));
-                i.putExtra("noteId",data.getStringExtra("noteId"));
-                startActivity(i);
-            }
+            Intent i = new Intent(view.getContext(), EditNote.class);
+            i.putExtra("title",data.getStringExtra("title"));
+            i.putExtra("content",data.getStringExtra("content"));
+            i.putExtra("noteId",data.getStringExtra("noteId"));
+            startActivity(i);
         });
     }
 
